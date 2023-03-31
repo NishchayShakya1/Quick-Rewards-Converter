@@ -1,6 +1,6 @@
 // ignore_for_file: deprecated_member_use
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:cashitout/view/About/about_page.dart';
+
 import 'package:cashitout/view/Contact/contact_page.dart';
 import 'package:cashitout/view/Contact/query_page.dart';
 
@@ -220,38 +220,7 @@ class _MyDrawerState extends State<MyDrawer> {
               ),
             ),
             
-            Padding(
-              padding: const EdgeInsets.all(4.0),
-              child: ListTile(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const AboutPage()),
-                  );
-                  sx.toggle(4);
-                },
-                leading: Obx(() {
-                  return Icon(
-                    Icons.info_outline,
-                    color: sx.on.value == 4
-                        ? MyTheme.lightBluishColor
-                        : Colors.white,
-                  );
-                }),
-                //network
-
-                title: Obx(() {
-                  return Text("About App",
-                      style: TextStyle(
-                          color: sx.on.value == 4
-                              ? MyTheme.lightBluishColor
-                              : Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                          fontFamily: GoogleFonts.poppins().fontFamily));
-                }),
-              ),
-            ),
+            
           ],
         ),
       ),
