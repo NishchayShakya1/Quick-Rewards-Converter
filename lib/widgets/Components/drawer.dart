@@ -1,5 +1,7 @@
 // ignore_for_file: deprecated_member_use
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cashitout/view/Contact/contact_page.dart';
+import 'package:cashitout/view/Contact/query_page.dart';
 
 import 'package:cashitout/view/Token/token_page.dart';
 import 'package:cashitout/widgets/Components/themes.dart';
@@ -147,6 +149,74 @@ class _MyDrawerState extends State<MyDrawer> {
                         fontSize: 20,
                         fontFamily: GoogleFonts.poppins().fontFamily));
               })),
+            ),
+
+             Padding(
+              padding: const EdgeInsets.all(4.0),
+              child: ListTile(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ContactPage()),
+                  );
+                  sx.toggle(2);
+                },
+                leading: Obx(() {
+                  return Icon(
+                    Icons.support_agent_sharp,
+                    color: sx.on.value == 2
+                        ? MyTheme.lightBluishColor
+                        : Colors.white,
+                  );
+                }),
+                //network
+
+                title: Obx(() {
+                  return Text("Assistance",
+                      style: TextStyle(
+                          color: sx.on.value == 2
+                              ? MyTheme.lightBluishColor
+                              : Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                          fontFamily: GoogleFonts.poppins().fontFamily));
+                }),
+              ),
+            ),
+
+             Padding(
+              padding: const EdgeInsets.all(4.0),
+              child: ListTile(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => FirebaseQueryFuture()),
+                  );
+                  sx.toggle(3);
+                },
+                leading: Obx(() {
+                  return Icon(
+                    Icons.question_mark,
+                    color: sx.on.value == 3
+                        ? MyTheme.lightBluishColor
+                        : Colors.white,
+                  );
+                }),
+                //network
+
+                title: Obx(() {
+                  return Text("My Queries",
+                      style: TextStyle(
+                          color: sx.on.value == 3
+                              ? MyTheme.lightBluishColor
+                              : Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                          fontFamily: GoogleFonts.poppins().fontFamily));
+                }),
+              ),
             ),
 
           ],
